@@ -1,7 +1,7 @@
 # Econometrics II
 
 University of Copenhagen · MSc Economics · Spring 2026 · 7.5 ECTS  
-<!-- TODO: Course code and link to kurser.ku.dk -->
+Course code AØKA08007U · [Course description](https://kurser.ku.dk/course/a%C3%98ka08007u)
 
 Time-series econometrics, covering likelihood analysis, dynamic and conditional models, misspecification testing, unit roots, cointegration and volatility models. The four assignments cover growth-at-risk, geopolitical risk as a predictor, a cointegrated VAR and ARCH effects in US excess returns.
 
