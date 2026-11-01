@@ -107,7 +107,7 @@ Figure~\ref{fig:acf_pacf} shows the sample autocorrelation function (ACF) and pa
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Assignment1/figures/fig1_gdp_growth.pdf}
+    \includegraphics[width=\textwidth]{../assignments/assignment-1/figures/fig1_gdp_growth.pdf}
     \caption{U.S. quarterly GDP growth $y_t$, 1990Q1--2024Q4.
              Shaded region indicates the out-of-sample evaluation period (2010Q1--2024Q4).}
     \label{fig:gdp_growth}
@@ -173,13 +173,13 @@ Testing AR(4) vs.\ AR(3) ($H_0\colon \phi_4=0$) gives $\xi_{\mathrm{LR}}=0.08$ (
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Assignment1/figures/fig2_acf_pacf.pdf}
+    \includegraphics[width=\textwidth]{../assignments/assignment-1/figures/fig2_acf_pacf.pdf}
     \caption{Sample ACF and PACF of $y_t$, training sample 1990Q1--2009Q4.
              Shaded regions indicate the $\pm 1.96/\sqrt{T}$ 95\% confidence bands.}
     \label{fig:acf_pacf}
 \end{figure}
 
-\input{Assignment1/tables/table1_selection.tex}
+\input{../assignments/assignment-1/tables/table1_selection.tex}
 
 
 \subsection{Misspecification Testing}
@@ -197,7 +197,7 @@ The ARCH-LM test at four lags yields $7.98$ ($p=0.092$), failing to reject condi
 
 Table~\ref{tab:estimates} reports the ML estimates for the AR(2) model over 1990Q1--2009Q4. The estimated unconditional mean is $\hat{\mu} = 0.0262$ (standard error $0.006$), corresponding to an average annual GDP growth of approximately 2.6\%, which is in line with the U.S.\ long-run average. Both AR coefficients are highly significant: $\hat{\phi}_1 = 1.359$ ($t=11.0$) and $\hat{\phi}_2 = -0.512$ ($t=-4.1$). All three AR(2) triangle conditions hold ($\hat\phi_1+\hat\phi_2=0.847<1$, $\hat\phi_2-\hat\phi_1=-1.871<1$, $|\hat\phi_2|=0.512<1$), so the process is stationary; the inverse roots are complex conjugates with modulus $\approx 0.72$, implying damped oscillations around the mean. The residual standard deviation $\hat{\sigma}=0.010$ enters the GaR formula as the scale of the conditional distribution.
 
-\input{Assignment1/tables/table2_estimates.tex}
+\input{../assignments/assignment-1/tables/table2_estimates.tex}
 
 
 \subsection{Forecast Evaluation}
@@ -206,12 +206,12 @@ Figure~\ref{fig:forecasts} and Table~\ref{tab:forecast_eval} present the out-of-
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Assignment1/figures/fig3_forecasts.pdf}
+    \includegraphics[width=0.8\textwidth]{../assignments/assignment-1/figures/fig3_forecasts.pdf}
     \caption{Out-of-sample forecasts vs realised GDP growth, 2010Q1--2024Q4.}
     \label{fig:forecasts}
 \end{figure}
 
-\input{Assignment1/tables/table3_forecast.tex}
+\input{../assignments/assignment-1/tables/table3_forecast.tex}
 
 
 \subsection{Growth-at-Risk Evaluation}
@@ -222,12 +222,12 @@ The AR(2) GaR has a violation rate of $\hat{p}=0.150$; the coverage $t$-test ($t
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Assignment1/figures/fig4_gar.pdf}
+    \includegraphics[width=0.8\textwidth]{../assignments/assignment-1/figures/fig4_gar.pdf}
     \caption{Growth-at-Risk estimates (10\% level) vs realised GDP growth, 2010Q1--2024Q4.}
     \label{fig:gar}
 \end{figure}
 
-\input{Assignment1/tables/table4_gar.tex}
+\input{../assignments/assignment-1/tables/table4_gar.tex}
 
 
 
@@ -296,12 +296,12 @@ Figure~\ref{fig:series_panel} shows that both $h_t$ and $r_t$ trend upward, whil
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Assignment3/figures/fig1_series_panel.pdf}
+	\includegraphics[width=0.7\textwidth]{../assignments/assignment-3/figures/fig1_series_panel.pdf}
 	\caption{Monthly series for $h_t$, $r_t$, and $m_t$, 2012M1--2023M12.}
 	\label{fig:series_panel}
 \end{figure}
 
-\input{Assignment3/tables/table1_summary_stats.tex}
+\input{../assignments/assignment-3/tables/table1_summary_stats.tex}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Econometric Theory}\label{sec:p2-theory}
@@ -340,27 +340,27 @@ where $\tilde\lambda_i$ are the restricted eigenvalues and $s$ is the number of 
 
 Table~\ref{tab:unit_root_tests} reports ADF tests. The level series are clearly non-stationary: the null of a unit root is not rejected for $h_t$, $r_t$, or $m_t$. In first differences the null is rejected for $h_t$ and $m_t$ at the 5\% level, while $\Delta r_t$ is borderline ($p=0.087$), which is not unusual in a short monthly sample with strong persistence in rents. Taken together, the evidence is consistent with treating the three series as I(1) and proceeding to co-integration testing.
 
-\input{Assignment3/tables/table2_unit_root_tests.tex}
+\input{../assignments/assignment-3/tables/table2_unit_root_tests.tex}
 
 \subsection{Lag Selection}
 
 Lag length is chosen by estimating a VAR in levels and minimising AIC; Table~\ref{tab:lag_selection} shows that AIC is minimised at lag 4, with BIC and HQIC also pointing to lag 4 within the displayed range. The preferred VECM therefore uses $k_{\Delta}=3$ lagged differences.
 
-\input{Assignment3/tables/table3_lag_selection.tex}
+\input{../assignments/assignment-3/tables/table3_lag_selection.tex}
 
 \subsection{Co-Integration Rank}
 
 With the dynamic specification fixed, we test the co-integration rank. Table~\ref{tab:johansen_trace} reports the Johansen trace statistic at each $r_0$. For $H_0:r=0$ against $H_1:r\geq 1$, the statistic of $48.23$ exceeds the 5\% critical value of $29.80$, so we reject. For $H_0:r\leq 1$ against $H_1:r\geq 2$, the statistic of $11.56$ is below the 5\% critical value of $15.49$, so we do not reject. The preferred rank is therefore $r=1$.
 
-\input{Assignment3/tables/table4_johansen_trace.tex}
+\input{../assignments/assignment-3/tables/table4_johansen_trace.tex}
 
 Having found rank $r=1$, we estimate the CVAR and characterise the long-run relation. Figure~\ref{fig:coint_fit} plots the actual $h_t$ together with the fitted long-run component implied by the normalised co-integrating vector, and Table~\ref{tab:cvar_estimates} reports the implied coefficients with ML standard errors.
 
-\input{Assignment3/tables/table5_cvar_estimates.tex}
+\input{../assignments/assignment-3/tables/table5_cvar_estimates.tex}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Assignment3/figures/fig2_cointegration_fit.pdf}
+	\includegraphics[width=0.9\textwidth]{../assignments/assignment-3/figures/fig2_cointegration_fit.pdf}
 	\caption{Actual $h_t$ and fitted long-run component from the preferred CVAR.}
 	\label{fig:coint_fit}
 \end{figure}
@@ -369,7 +369,7 @@ Having found rank $r=1$, we estimate the CVAR and characterise the long-run rela
 
 Before testing the user-cost restriction, we assess whether the dynamic specification is adequate. Residual diagnostics in Table~\ref{tab:diagnostics} are mixed. The Portmanteau whiteness test ($p=0.30$) finds no remaining serial correlation, so the dynamic specification is statistically adequate in that dimension. The Jarque--Bera test strongly rejects normality, and ARCH-LM rejects homoskedasticity for the mortgage-rate residuals at the 5\% level ($p=0.022$) and is borderline for $h_t$ ($p=0.086$). These results support consistency of the rank estimate (which does not rely on Gaussianity), but the violations of normality and homoskedasticity imply that the standard errors on $\beta$ and $\alpha$ should be read with caution and that asymptotic-normality based tests are at best approximate; the post-2021 interest-rate shock is the likely driver. The LR statistics reported below remain asymptotically $\chi^2$ under the maintained assumptions, but their finite-sample $p$-values should be treated as approximate.
 
-\input{Assignment3/tables/table6_diagnostics.tex}
+\input{../assignments/assignment-3/tables/table6_diagnostics.tex}
 
 \subsection{Preferred CVAR and the User-Cost Restriction}
 
@@ -381,14 +381,14 @@ with ML standard errors of $0.0467$ on the rent coefficient and $0.0068$ on the 
 
 The adjustment loadings indicate how equilibrium is restored. The point estimate $\hat\alpha_m=0.3958$ looks large but has standard error $0.5380$, so a $t$-ratio of $0.74$ means we cannot distinguish $\alpha_m$ from zero; the mortgage equation's apparent correction is not statistically supported. The loadings $\hat\alpha_h=0.0156$ ($t\approx 3.2$) and $\hat\alpha_r=0.0091$ ($t\approx 5.0$) are statistically significant but economically tiny. To make this precise we formally test weak exogeneity of the mortgage rate for $\beta$, i.e.\ the restriction $\alpha_m=0$, using the Johansen LR procedure on $\alpha = A\psi$ with $A=\bigl((1,0,0)',(0,1,0)'\bigr)$. Table~\ref{tab:restriction_test} reports an LR statistic of $0.45$ with $\chi^2(1)$ $p$-value $0.50$, so we do not reject weak exogeneity of $m_t$. The economic picture is therefore that short-run correction is borne by the two slow-moving prices ($h_t$ and $r_t$), with the mortgage rate behaving as the (weakly) exogenous driver of the system --- which is again the opposite of the user-cost story, in which house prices adjust to the rent--cost wedge.
 
-\input{Assignment3/tables/table7_restriction_test.tex}
+\input{../assignments/assignment-3/tables/table7_restriction_test.tex}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Discussion}\label{sec:p2-discussion}
 
 The empirical evidence supports one co-integrating relation between house prices, rents, and the mortgage rate in 2012M1--2023M12, but the economic content of the relation is only partly aligned with the textbook user-cost model: the rent elasticity is significantly above one, the mortgage-rate coefficient has the wrong sign and is insignificant, and the formal LR test of $\beta_r=1$ is rejected at $p=0.0001$. Simpler frictions absent from \eqref{eq:cvar} --- risk premia, refinancing constraints, supply rigidities, expectational shifts --- offer natural explanations for the elasticity exceeding one. Equilibrium is also restored in a way that the textbook does not predict: the mortgage rate, not house prices, does most of the short-run adjusting toward the long-run wedge.
 
-\input{Assignment3/tables/table8_robustness.tex}
+\input{../assignments/assignment-3/tables/table8_robustness.tex}
 
 To gauge robustness we re-estimate the same specification on the longer sample 2000M1--2023M12, which includes the housing boom and the financial crisis. AIC again selects four lags, and the implied long-run coefficients ($\hat\beta_r=1.55$, $\hat\beta_m=0.17$) are qualitatively similar. The trace statistic at $r=0$ collapses to $19.6$, however --- below the 5\% critical value of $29.8$ --- so we cannot even reject no co-integration on the longer sample, and the LR test of $\beta_r=1$ has $p=0.10$, no longer significant at the 5\% level. The 2012--2023 finding is therefore sample-specific: the bubble--bust period is informative enough about the data-generating process that the post-crisis ``stable equilibrium'' interpretation does not survive its inclusion. This sensitivity, combined with the residual diagnostics, suggests the estimated long-run relation should be read as a useful approximation for the post-crisis regime rather than a structural law.
 
