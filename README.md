@@ -36,7 +36,3 @@ tectonic -Z continue-on-errors assignment1.tex
 ```
 
 `exam/exam_final.tex` reuses figures and tables from `assignments/assignment-1` and `assignment-3`, so build it from `exam/`. The `Assignment_N.xlsx` data files are the course's, but they stay next to the notebooks that read them.
-
-## Notes
-
-<!-- TODO: the autumn-2025 drafts suggest the course started in autumn 2025. Confirm the semester -->
